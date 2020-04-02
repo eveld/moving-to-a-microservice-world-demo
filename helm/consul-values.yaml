@@ -1,0 +1,21 @@
+global:
+    enabled: false
+    datacenter: azure
+
+client:
+  enabled: true
+  image: "consul:1.7.2"
+  exposeGossipPorts: true
+  join:
+    - "10.5.0.200"
+
+  grpc: true
+
+connectInject:
+  enabled: true
+  image: null
+  default: false
+
+  centralConfig:
+    enabled: "true"
+    defaultProtocol: "tcp"
