@@ -1,4 +1,4 @@
-container "web-v1" {
+container "web" {
   image {
     name = "nicholasjackson/fake-service:vm-v0.9.0"
   }
@@ -10,7 +10,12 @@ container "web-v1" {
 
   env {
     key = "NAME"
-    value = "web-v1"
+    value = "web"
+  }
+
+  env {
+      key = "MESSAGE"
+      value = "ok"
   }
 
   env {
@@ -20,7 +25,7 @@ container "web-v1" {
 }
 
 ingress "web" {
-  target = "container.web-v1"
+  target = "container.web"
     
   network  {
     name = "network.azure"

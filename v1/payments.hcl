@@ -1,4 +1,4 @@
-container "payments-v1" {
+container "payments" {
   image   {
     name = "nicholasjackson/fake-service:vm-v0.9.0"
   }
@@ -10,6 +10,11 @@ container "payments-v1" {
 
   env {
     key = "NAME"
-    value = "payments-v1"
+    value = "payments"
+  }
+
+  env {
+      key = "MESSAGE"
+      value = "payment successful"
   }
 }

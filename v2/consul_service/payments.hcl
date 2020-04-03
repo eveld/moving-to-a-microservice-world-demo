@@ -1,6 +1,6 @@
 service {
   name = "payments"
-  id = "payments-v2"
+  id = "payments"
   port = 9090
 
   meta {

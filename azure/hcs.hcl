@@ -21,7 +21,7 @@ container "consul" {
   }
 }
 
-ingress "consul-http" {
+ingress "consul" {
   target = "container.consul"
 
   network {

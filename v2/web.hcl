@@ -1,46 +1,17 @@
-container "web-v2" {
-  image {
-    name = "nicholasjackson/fake-service:vm-v0.9.0"
-  }
+k8s_config "web" {
+    cluster = "k8s_cluster.aks"
+	paths = ["./k8s_config"]
+	wait_until_ready = true
 
-  volume {
-    source      = "./consul_service/web.hcl"
-    destination = "/config/web.hcl"
-  }
-
-  network { 
-    name = "network.azure"
-    ip_address = "10.5.0.100"
-  }
-
-  env {
-    key = "CONSUL_SERVER"
-    value = "consul.container.shipyard"
-  }
-
-  env {
-    key = "CONSUL_DATACENTER"
-    value = "azure"
-  }
-
-  env {
-    key = "NAME"
-    value = "web"
-  }
-
-  env {
-    key = "SERVICE_ID"
-    value = "web-v2"
-  }
-
-  env {
-      key = "UPSTREAM_URIS"
-      value = "http://localhost:9091"
+  health_check {
+    timeout = "60s"
+    pods = ["service=web"]
   }
 }
 
 ingress "web" {
-  target = "container.web-v2"
+  target = "k8s_cluster.aks"
+  service = "svc/web"
     
   network  {
     name = "network.azure"
