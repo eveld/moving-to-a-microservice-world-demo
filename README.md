@@ -6,8 +6,8 @@ slug: hashidays_consul
 This demo will guide you through migrating an application from a monolithic application running on a virtual machine to microservices running on Kubernetes, using Consul Service Mesh.
 
 ## Prerequisites
-- Docker (https://docker.io)
-- Shipyard (https://shipyard.run)
+- Docker (https://docker.com/get-started)
+- Shipyard (https://shipyard.run/docs/install)
 
 ## Getting started
 To start the demo, run the following commands.

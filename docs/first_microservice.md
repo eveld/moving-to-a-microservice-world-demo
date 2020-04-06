@@ -16,20 +16,6 @@ Lets run the new `currency` microservice on Kubernetes.
 shipyard run v3
 ```
 
-## Enable L7 features
-
-Set the protocol to HTTP in the service defaults for the currency service, so you can make use of the L7 capabilities of Envoy.
-
-```go
-Kind = "service-defaults"
-Name = "currency"
-Protocol = "http"
-```
-
-```
-consul config write v3/consul_service/currency_defaults.hcl
-```
-
 ## Path based routing
 
 To be sure that the currency microservice works as expected, expose it on a separate path. This way you can call it and test that everything functions as intended.

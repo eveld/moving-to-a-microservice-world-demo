@@ -46,14 +46,4 @@ To effectuate the configuration, you need to write it to the central config.
 consul config write v2/consul_service/payments_defaults.hcl
 ```
 
-Do the same for the `web` service.
-
-```go
-Kind = "service-defaults"
-Name = "web"
-Protocol = "http"
-```
-
-```
-consul config write v2/consul_service/web_defaults.hcl
-```
+Because the `web` service is running on Kubernetes with the Connect Injector enabled, we can set the protocol when creating the deployment by setting the `"consul.hashicorp.com/connect-service-protocol": "http"` annotation.

@@ -15,7 +15,7 @@ container "payments" {
 
   env {
     key = "CONSUL_SERVER"
-    value = "consul.container.shipyard.run"
+    value = "hcs.container.shipyard.run"
   }
 
   env {
@@ -37,4 +37,27 @@ container "payments" {
     key = "SERVICE_ID"
     value = "payments"
   }
+}
+
+exec_remote "payments_defaults" {
+    network {
+        name = "network.azure"
+    }
+
+    image {
+        name = "shipyardrun/tools:beta"
+    }
+
+    volume {
+        source = "consul_service/payments_defaults.hcl"
+        destination = "/config/payments_defaults.hcl"
+    }
+
+    env {
+        key = "CONSUL_HTTP_ADDR"
+        value = "hcs.container.shipyard.run:8500"
+    }
+
+    cmd = "consul"
+    args = ["config", "write", "/config/payments_defaults.hcl"]
 }

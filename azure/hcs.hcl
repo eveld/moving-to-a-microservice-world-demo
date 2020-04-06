@@ -1,4 +1,4 @@
-container "consul" {
+container "hcs" {
   image {
     name = "consul:1.7.2"
   }
@@ -21,8 +21,8 @@ container "consul" {
   }
 }
 
-ingress "consul" {
-  target = "container.consul"
+ingress "hcs" {
+  target = "container.hcs"
 
   network {
     name = "network.azure"
@@ -32,6 +32,6 @@ ingress "consul" {
     local  = 8500
     remote = 8500
     host   = 8500
-    open_in_browser = true
+    open_in_browser = "/ui"
   }
 }
