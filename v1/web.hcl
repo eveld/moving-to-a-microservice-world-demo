@@ -35,5 +35,6 @@ ingress "web" {
     local  = 9090
     remote = 9090
     host   = 9090
+    open_in_browser = true
   }
 }

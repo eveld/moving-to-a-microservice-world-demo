@@ -15,6 +15,7 @@ spec:
         app: currency
       annotations:
         "consul.hashicorp.com/connect-inject": "true"
+        "consul.hashicorp.com/connect-service-protocol": "http"
     spec:
       containers:
       - name: currency

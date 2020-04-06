@@ -16,6 +16,7 @@ spec:
       annotations:
         "consul.hashicorp.com/connect-inject": "true"
         "consul.hashicorp.com/connect-service-upstreams": "payments:9091"
+        "consul.hashicorp.com/connect-service-protocol": "http"
         "consul.hashicorp.com/service-meta-version": "2"
     spec:
       containers:

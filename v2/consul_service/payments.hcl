@@ -4,7 +4,7 @@ service {
   port = 9090
 
   meta {
-    version = "2"
+    version = "1"
   }
 
   connect { 

@@ -1,3 +1,3 @@
 Kind = "service-defaults"
-Name = "web"
+Name = "currency"
 Protocol = "http"

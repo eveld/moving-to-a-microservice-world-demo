@@ -1,25 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: payments-v2
+  name: payments
   labels:
-    app: payments-v2
+    app: payments
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: payments-v2
+      app: payments
   template:
     metadata:
       labels:
-        app: payments-v2
+        app: payments
       annotations:
         "consul.hashicorp.com/connect-inject": "true"
         "consul.hashicorp.com/connect-service-upstreams": "currency:9091"
+        "consul.hashicorp.com/connect-service-protocol": "http"
         "consul.hashicorp.com/service-meta-version": "2"
     spec:
       containers:
-      - name: payments-v2
+      - name: payments
         image: nicholasjackson/fake-service:v0.9.0
         ports:
         - containerPort: 9090
@@ -29,7 +30,7 @@ spec:
         - name: "UPSTREAM_URIS"
           value: "http://127.0.0.1:9091"
         - name: "NAME"
-          value: "payments-v2"
+          value: "payments v2"
         - name: "MESSAGE"
           value: "payment complete"
 
@@ -37,10 +38,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: payments-v2
+  name: payments
 spec:
   selector:
-    app: payments-v2
+    app: payments
   ports:
   - name: http
     protocol: TCP

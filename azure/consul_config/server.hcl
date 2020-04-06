@@ -24,8 +24,7 @@ connect {
 }
 
 config_entries {
-  bootstrap 
-    {
+  bootstrap {
       kind = "proxy-defaults"
       name = "global"
 
@@ -36,5 +35,5 @@ config_entries {
       mesh_gateway = {
         mode = "local"
       }
-    }
+  }
 }

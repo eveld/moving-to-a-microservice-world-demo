@@ -32,5 +32,6 @@ ingress "consul" {
     local  = 8500
     remote = 8500
     host   = 8500
+    open_in_browser = true
   }
 }

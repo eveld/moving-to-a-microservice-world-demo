@@ -4,7 +4,7 @@ container "payments" {
   }
 
   volume {
-    source      = "./consul_service/payments.hcl"
+    source = "./consul_service/payments.hcl"
     destination = "/config/payments.hcl"
   }
 
@@ -15,7 +15,7 @@ container "payments" {
 
   env {
     key = "CONSUL_SERVER"
-    value = "consul.container.shipyard"
+    value = "consul.container.shipyard.run"
   }
 
   env {

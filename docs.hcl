@@ -1,11 +1,7 @@
 docs "docs" {
   path  = "./docs"
   port  = 8080
-
-  index_title = "HashiDays"
-  index_pages = [ 
-      "index"
-  ]
+  open_in_browser = true
 
   network {
     name = "network.azure"
