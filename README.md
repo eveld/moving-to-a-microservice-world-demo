@@ -17,3 +17,6 @@ git clone https://github.com/eveld/hashidays.git
 cd hashidays
 shipyard run
 ```
+
+Shipyard will open the documentation in your browser automatically.
+The rest of the steps will be explained in further detail there.
