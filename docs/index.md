@@ -5,8 +5,7 @@ sidebar_label: "Index"
 ---
 This demo will guide you through migrating an application from a monolithic application running on a virtual machine to microservices running on Kubernetes, using Consul Service Mesh.
 
-![AKS](https://github.com/eveld/hashidays/blob/master/docs/assets/aks_logo.png?raw=true)
-![HCS](https://github.com/eveld/hashidays/blob/master/docs/assets/hcs_logo.png?raw=true)
+![AKS and HCS](https://github.com/eveld/hashidays/blob/master/docs/assets/logos.png?raw=true)
 
 When you started this demo Shipyard created several resources for you:
 - a public `WAN` network with a subnet of 192.168.0.0/16, representing the public internet.
