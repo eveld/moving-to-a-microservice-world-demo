@@ -10,7 +10,10 @@ This demo will guide you through migrating an application from a monolithic appl
 - Shipyard (https://shipyard.run)
 
 ## Getting started
-To start the demo, run the following command.
+To start the demo, run the following commands.
+
 ```
-shipyard run github.com/eveld/hashidays
+git clone https://github.com/eveld/hashidays.git
+cd hashidays
+shipyard run
 ```
