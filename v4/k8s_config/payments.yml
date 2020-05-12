@@ -14,9 +14,13 @@ spec:
       labels:
         app: payments
       annotations:
+        # Automatically inject a sidecar proxy.
         "consul.hashicorp.com/connect-inject": "true"
+        # Call the upstream service "currency" on localhost:9091.
         "consul.hashicorp.com/connect-service-upstreams": "currency:9091"
+        # Set the protocol to HTTP in the service defaults.
         "consul.hashicorp.com/connect-service-protocol": "http"
+        # Add metadata to the service to distuinguish between the 2 versions.
         "consul.hashicorp.com/service-meta-version": "2"
     spec:
       containers:

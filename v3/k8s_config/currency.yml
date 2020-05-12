@@ -14,7 +14,9 @@ spec:
       labels:
         app: currency
       annotations:
+        # Automatically inject a sidecar proxy.
         "consul.hashicorp.com/connect-inject": "true"
+        # Set the protocol to HTTP in the service defaults.
         "consul.hashicorp.com/connect-service-protocol": "http"
     spec:
       containers:
